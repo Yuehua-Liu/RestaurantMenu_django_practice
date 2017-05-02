@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+		<title>Menu</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		{% for food in foods %}
+			<h3>第{{forloop.counter}}道菜</h3>
+			<ul>
+				<li>食物的名字是：{{ food.name }}</li>
+				<li>食物的價格是：{{ food.price }}</li>
+				<li>食物說明：{{ food.comment }}</li>
+				<li>食物辣度：{% if food.is_spicy %} 辣 {% else %} 不辣 {% endif %}</li>
+			</ul>
+		{% empty %}
+			<p>本餐廳啥都沒有~~~</p>	
+		{% endfor %}
+	</body>
+</html>
+
+{% comment %}
+	這是
+	多行註解
+	有夠難看YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+{% endcomment %}
